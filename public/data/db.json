@@ -1,0 +1,54 @@
+{
+  "feeds": [
+    {
+      "id": 1,
+      "picture": "/images/profile1.jpeg",
+      "image": "/images/baby.jpeg",
+      "name": "dydaa110",
+      "description": "아기 백일 촬영",
+      "tag": ["❤️백일촬영", "아기", "스튜디오"],
+      "comment": [
+        {
+          "hongsick": "축하해요~"
+        },
+        {
+          "gg9910": "부럽습니다:)"
+        },
+        {
+          "llllll1": "행복해라!"
+        }
+      ],
+      "likes": "67",
+      "day": "1일전"
+    },
+    {
+      "id": 2,
+      "picture": "/images/profile2.jpeg",
+      "image": [
+        "/images/healing1.jpeg",
+        "/images/healing2.jpeg",
+        "/images/healing3.jpeg"
+      ],
+      "name": "sh.hong01",
+      "description": "힐링되는 사진",
+      "tag": ["힐링", "사진"],
+      "comment": [{ "queNf99": "멋지네요!" }, { "smile": "힐링됩니다ㅎ" }],
+      "likes": "20",
+      "day": "3시간전"
+    },
+    {
+      "id": 3,
+      "picture": "/images/profile3.jpeg",
+      "image": "/images/travel.jpeg",
+      "name": "ratt10d",
+      "description": "오랜만에 해외여행 왔어요~~",
+      "tag": ["코로나끝났어요😃", "🇬🇸여행좋다~"],
+      "comment": [
+        { "cloud0": "어디로 가셨어요?" },
+        { "NFCClub": "나도 가고싶다~~" }
+      ],
+      "likes": "192",
+      "day": "2일전"
+    }
+  ]
+}
