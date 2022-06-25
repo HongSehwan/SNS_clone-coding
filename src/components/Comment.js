@@ -24,12 +24,16 @@ const Comment = ({ commentText }) => {
   }, []);
 
   return (
-    <CommentContainer>
-      <NicknameLine>{text.split(':')[0].slice(2, -1)}</NicknameLine>
-      <TextLine>
-        : {text.split(`${text.split(':')[0].slice(2, -1)}`)[1].slice(3, -2)}
-      </TextLine>
-    </CommentContainer>
+    <>
+      <CommentContainer>
+        <NicknameLine>{text.split(':')[0].slice(2, -1)}</NicknameLine>
+        {text ? (
+          <TextLine>
+            : {text.split(`${text.split(':')[0].slice(2, -1)}`)[1].slice(3, -2)}
+          </TextLine>
+        ) : null}
+      </CommentContainer>
+    </>
   );
 };
 

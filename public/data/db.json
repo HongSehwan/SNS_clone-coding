@@ -49,6 +49,39 @@
       ],
       "likes": "192",
       "day": "2일전"
+    },
+    {
+      "id": 4,
+      "picture": "/images/profile4.jpeg",
+      "image": [
+        "/images/daily_life1.jpeg",
+        "/images/daily_life2.jpeg",
+        "/images/daily_life3.jpeg",
+        "/images/daily_life4.jpeg"
+      ],
+      "name": "homebody_1",
+      "description": "일상 기록...",
+      "tag": ["평범한날", "기록", "행복함"],
+      "comment": [
+        { "laking_": "제가 원하는 삶이네요...!" },
+        { "son_like": "good job!" }
+      ],
+      "likes": "316",
+      "day": "4일전"
+    },
+    {
+      "id": 5,
+      "picture": "/images/profile5.jpeg",
+      "image": "/images/car.jpeg",
+      "name": "speedracer0123",
+      "description": "새차 환영식!!",
+      "tag": ["드라이브갈사람?", "🌈기분전환"],
+      "comment": [
+        { "hoooooohu": "축하한다 친구야ㅎ" },
+        { "puppy486": "드라이브 가자~~" }
+      ],
+      "likes": "11",
+      "day": "6시간전"
     }
   ]
 }

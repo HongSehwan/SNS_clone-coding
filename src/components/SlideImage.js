@@ -1,21 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import fontawesome from '@fortawesome/fontawesome';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useNavigate } from 'react-router';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const SlideContainer = styled.div`
   width: 100%;
-
-  @media screen and (max-width: 711px) {
-    width: 100%;
-  }
+  overflow: hidden;
 `;
 
-const SlideSection = styled.div``;
+const SlideSection = styled(motion.div)`
+  display: flex;
+`;
 
-const SlideImg = styled.img`
+const SlideImg = styled(motion.img)`
   width: 100%;
   height: 50vh;
   object-fit: cover;
@@ -36,6 +35,10 @@ const SlideNextBtn = styled.button`
   font-weight: 700;
   color: #dfe4ea;
   cursor: pointer;
+  :hover {
+    transition: all 1s;
+    transform: scale(1.13);
+  }
 `;
 
 const SlidePrevBtn = styled.button`
@@ -47,6 +50,10 @@ const SlidePrevBtn = styled.button`
   font-weight: 700;
   color: #dfe4ea;
   cursor: pointer;
+  :hover {
+    transition: all 1s;
+    transform: scale(1.13);
+  }
 `;
 
 const Previous = styled.div``;
@@ -55,7 +62,7 @@ const Next = styled.div``;
 
 fontawesome.library.add(faAngleLeft, faAngleRight);
 
-const SlideImage = ({ imgData }) => {
+const SlideImage = ({ imgData, setLoading }) => {
   const [currentIdx, setCurrentIdx] = useState(0);
 
   const nextSlide = () => {
@@ -74,27 +81,59 @@ const SlideImage = ({ imgData }) => {
     }
   };
 
+  const boxVariants = {
+    entry: {
+      x: 500,
+      opacity: 0,
+      scale: 0,
+    },
+    center: {
+      opacity: 1,
+      x: 0,
+      scale: 1,
+      transition: { duration: 0.5 },
+    },
+    Exit: {
+      x: 0,
+      opacity: 0,
+      scale: 2,
+      transition: { duration: 0.5 },
+    },
+  };
+
   return (
     <SlideContainer>
       <SlideSection>
-        <SlideImg src={imgData[currentIdx]} alt="Slide Image" />
-        <ButtonArea>
-          <Previous>
-            <FontAwesomeIcon
-              style={{ position: 'relative', bottom: '27vh', color: '#dfe4ea' }}
-              icon="angle-left"
-            />
-            <SlidePrevBtn onClick={prevSlide}>Prev</SlidePrevBtn>
-          </Previous>
-          <Next>
-            <SlideNextBtn onClick={nextSlide}>Next</SlideNextBtn>
-            <FontAwesomeIcon
-              style={{ position: 'relative', bottom: '27vh', color: '#dfe4ea' }}
-              icon="angle-right"
-            />
-          </Next>
-        </ButtonArea>
+        <AnimatePresence>
+          <SlideImg
+            variants={boxVariants}
+            src={imgData[currentIdx]}
+            alt="Slide Image"
+            initial="entry"
+            animate="center"
+            exit="Exit"
+            key={currentIdx}
+            onLoad={() => setLoading(false)}
+            onError={() => alert('image load error')}
+          />
+        </AnimatePresence>
       </SlideSection>
+      <ButtonArea>
+        <Previous>
+          <FontAwesomeIcon
+            style={{ position: 'relative', bottom: '27vh', color: '#dfe4ea' }}
+            icon="angle-left"
+          />
+          <SlidePrevBtn onClick={prevSlide}>Prev</SlidePrevBtn>
+        </Previous>
+        <Next>
+          <SlideNextBtn onClick={nextSlide}>Next</SlideNextBtn>
+          <FontAwesomeIcon
+            style={{ position: 'relative', bottom: '27vh', color: '#dfe4ea' }}
+            icon="angle-right"
+          />
+        </Next>
+      </ButtonArea>
     </SlideContainer>
   );
 };

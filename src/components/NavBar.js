@@ -59,6 +59,10 @@ const IconBtn = styled.button`
   border: none;
   background-color: #f0ebe0;
   cursor: pointer;
+  :hover {
+    transition: all 1s;
+    transform: scale(1.3);
+  }
 `;
 
 fontawesome.library.add(
