@@ -24,6 +24,7 @@
 
 <h3>LOGIN</h3>
 ![pre-onboarding](https://user-images.githubusercontent.com/85854164/175780794-b8f0b659-35e6-4383-8672-05531e88f96d.gif)
+<img src="(https://user-images.githubusercontent.com/85854164/175780794-b8f0b659-35e6-4383-8672-05531e88f96d.gif">
 
 <h3>Feeds</h3>
 ![pre-onboarding2](https://user-images.githubusercontent.com/85854164/175781325-d349aeb5-0529-4251-a509-c7cac108ed4f.gif)
