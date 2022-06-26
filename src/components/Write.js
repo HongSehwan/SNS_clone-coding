@@ -74,8 +74,23 @@ const Write = ({ info }) => {
     dispatch(setComment(value));
   };
 
-  const CommentWrite = () => {
+  const ClickPostComment = () => {
     if (info.id) {
+      const nickname = email.split('@')[0];
+      const text = { [nickname]: commentTxt };
+      feedInfo[info.id - 1].comment.push(text);
+      window.localStorage.removeItem('feeds');
+      window.localStorage.setItem('feeds', JSON.stringify(feedInfo));
+      const feedsUpdate = JSON.parse(window.localStorage.getItem('feeds'));
+      dispatch(setFeeds(feedsUpdate));
+      setInputState(true);
+      let input = document.getElementById(info.id);
+      input.value = null;
+    }
+  };
+
+  const PressPostComment = () => {
+    if (window.event.keyCode === 13) {
       const nickname = email.split('@')[0];
       const text = { [nickname]: commentTxt };
       feedInfo[info.id - 1].comment.push(text);
@@ -91,6 +106,7 @@ const Write = ({ info }) => {
 
   useEffect(() => {
     dispatch(setComment(''));
+    setInputState(false);
   }, [inputState]);
 
   return (
@@ -106,9 +122,10 @@ const Write = ({ info }) => {
             value={info.id === inputName ? commentTxt : undefined}
             required
             onChange={onChangeText}
+            onKeyDown={PressPostComment}
           />
         </InputArea>
-        <WriteBtn onClick={CommentWrite}>게시</WriteBtn>
+        <WriteBtn onClick={ClickPostComment}>게시</WriteBtn>
       </WriteArea>
     </WriteContainer>
   );

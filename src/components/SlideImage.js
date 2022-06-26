@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import fontawesome from '@fortawesome/fontawesome';
