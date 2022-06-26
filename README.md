@@ -11,10 +11,14 @@
 <h2>구현 Library</h2>
 
 - Redux
+- Redux-Persist
 - Styled-Components
 - Axios
 - Fontawesome
 - Framer-Motion
+
+<h2>Redux와 Redux-Persist를 사용한 이유</h2>
+상태를 전역으로 관리하고 코드 재사용성을 극대화하기 위해 Redux를 최대한 활용하였습니다. 또한 로그인 상태를 유지하기 위해 Redux-Persist를 사용하였습니다.
 
 <h2>Error 사항</h2>
 
