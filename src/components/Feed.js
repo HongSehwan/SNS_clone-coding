@@ -98,6 +98,16 @@ const CommentArea = styled.div`
   margin-bottom: 2vh;
 `;
 
+const Date = styled.p`
+  margin-left: 15px;
+  font-size: 11px;
+  margin-bottom: 2vh;
+  color: #a4b0be;
+  @media screen and (max-width: 711px) {
+    margin-left: 10px;
+  }
+`;
+
 const FeedHead = ({ info, setView }) => {
   return (
     <FeedContainer>
@@ -131,6 +141,7 @@ const FeedHead = ({ info, setView }) => {
             <Comment key={index} commentText={commentText} />
           ))}
         </CommentArea>
+        <Date>{info.date}</Date>
         <Write info={info} />
       </FeedSection>
     </FeedContainer>
